@@ -1,7 +1,6 @@
 HTTP/1.1 200 OK
 Content-Language: en
 P3P: CP='CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR'
-Transfer-Encoding: chunked
 Date: Sun, 07 Apr 2024 22:01:07 GMT
 Server: lighttpd/1.4.28
 
