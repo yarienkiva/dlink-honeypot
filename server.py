@@ -4,6 +4,8 @@ import csv
 import os
 import re
 
+logging.basicConfig(level=logging.INFO)
+
 req_dir = os.path.realpath("output/")
 req_404 = "404.req"
 req_honey = "honey.req"
@@ -30,7 +32,7 @@ class RawHTTPResponseHandler(http.server.BaseHTTPRequestHandler):
                 with open("auth.log", "a") as f:
                     wr = csv.writer(f, quoting=csv.QUOTE_ALL)
                     wr.writerow([self.client_address[0], self.path])
-                self._sendfile(req_honey)
+                return self._sendfile(req_honey)
 
             elif not _is_path_safe(file_path, req_dir):
                 raise Exception(f"Path traversal detected: {self.path}")
@@ -53,7 +55,7 @@ class RawHTTPResponseHandler(http.server.BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    port = 8000
+    port = 80
     server_address = ("", port)
     httpd = http.server.HTTPServer(server_address, RawHTTPResponseHandler)
     logging.info(f"Server running on port {port}...")
