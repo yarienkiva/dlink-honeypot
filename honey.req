@@ -1,12 +1,8 @@
 HTTP/1.1 200 OK
 Content-Language: en
 P3P: CP='CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR'
-Content-Type: text/html
-Accept-Ranges: bytes
-ETag: "756183334"
-Last-Modified: Fri, 11 Aug 2017 08:09:35 GMT
-Content-Length: 109
-Date: Sun, 07 Apr 2024 20:29:11 GMT
+Transfer-Encoding: chunked
+Date: Sun, 07 Apr 2024 22:01:07 GMT
 Server: lighttpd/1.4.28
 
 <?xml version="1.0" encoding="UTF-8"?>
