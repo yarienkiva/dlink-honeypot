@@ -1,0 +1,674 @@
+HTTP/1.1 200 OK
+Content-Language: en
+P3P: CP='CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR'
+Content-Type: text/css
+Accept-Ranges: bytes
+ETag: "619868614"
+Last-Modified: Fri, 11 Aug 2017 08:09:35 GMT
+Content-Length: 13292
+Date: Sun, 07 Apr 2024 20:29:11 GMT
+Server: lighttpd/1.4.28
+
+
+HTML {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+BODY {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+/*
+DIV {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}*/
+H1 {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+H2 {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+H3 {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+H4 {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+H5 {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: 12px; PADDING-BOTTOM: 5px; MARGIN: 0px -10px 1px; TEXT-TRANSFORM: none; COLOR: #ffffff; PADDING-TOP: 5px; LETTER-SPACING: 1px; BACKGROUND-COLOR: #333333
+}
+P {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+UL {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+OL {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+LI {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+DL {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+DT {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+DD {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+TD {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+INPUT {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+SELECT {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+TEXTAREA {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+INPUT {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+SELECT {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+TEXTAREA {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif
+}
+
+a:link,a:visited,a:active
+{
+	text-decoration: none;
+}
+
+ul#icons {margin: 0; padding: 0;}
+ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+ul#icons span.ui-icon {float: left; margin: 0 4px;}
+
+.accordion {
+	width: 520px;
+	border-bottom: solid 1px #c4c4c4;
+}
+.accordion h3 {
+	background: #e9e7e7 url(../images/arrow-square.gif) no-repeat right -51px;
+	padding: 7px 15px;
+	margin: 0;
+	font: bold 100%/100% Arial, Helvetica, sans-serif;
+	border: solid 1px #c4c4c4;
+	border-bottom: none;
+	cursor: pointer;
+}
+.accordion h3:hover {
+	background-color: #e3e2e2;
+}
+.accordion h3.active {
+	background-position: right 5px;
+}
+.accordion div {
+	background: #f7f7f7;
+	margin: 0;
+	padding: 10px 15px 20px;
+	border-left: solid 1px #c4c4c4;
+	border-right: solid 1px #c4c4c4;
+}
+.tr_title
+{
+	
+	background: #e3e2e2;
+	font: bold 100%/100% Arial, Helvetica, sans-serif;
+}
+
+.table1 td
+{
+	border-left: 1px ridge #A9A9A9;
+	border-right: 1px ridge #A9A9A9;
+	border-bottom: 1px ridge #A9A9A9;
+}
+.table1 th
+{
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Helvetica, Geneva, Arial, sans-serif;
+}
+
+.table_title_middle
+{	
+	background: url(../images/table_middle.png) repeat-x;
+	text-align:left;/*center;*/
+}
+
+.share_error
+{
+	border:1px solid #FF0000;
+}
+
+.share_ok
+{
+	border:1px solid #79AED5;
+}
+.disable
+{
+	display:none;
+}
+
+.enable
+{
+	display:
+}
+
+.clock
+{
+font: bold 100%/100% Arial, Helvetica, sans-serif;
+color:#79AED5;
+margin:10px;
+}
+
+div.overlay { 
+	/* growing background image */
+    background-image:url(../images/big_loading.gif);    
+    /* initially overlay is hidden */
+    display:none;
+    /* some padding to layout nested elements nicely  */
+	padding:0px;
+	/* dimensions after the growing animation finishes  */
+	width:200px;
+	height:200px;	
+/*	margin-top:50px;	*/
+/*	z-index:20000;		*/
+	
+	
+	position:absolute;
+	
+} 
+#id_percentage{
+	position: relative;
+	margin-top:46%;margin-left:45%;
+	z-index:10000;
+}
+#id_msg{
+	position:absolute;
+	top:48%;
+	left:38%;
+	z-index:99999;
+	color:#FF0000;
+	font-weight: bold;
+}
+
+#overlay  div.close { 
+     right:-15px;   
+     top:-10px; 
+} 
+
+/* the overlayed element */ 
+.dialog_overlay {
+	/* must be initially hidden */
+	display:none;
+	
+	/* place overlay on top of other elements */
+	z-index:10000;
+	
+	/* CSS3 styling for latest browsers */
+	-moz-box-shadow:0 0 90px 5px #000;
+	-webkit-box-shadow: 0 0 90px #000;
+	width:445px;
+	height:272px;
+	background-image:url(../images/pop_bg.png);
+	background-repeat:no-repeat;
+}
+
+/* close button positioned on upper right corner */
+
+.dialog_overlay .close {
+	background-image:url(../images/close.png);
+	position:absolute;
+	right:5px;
+	top:2px;
+	cursor:pointer;
+	height:35px;
+	width:35px;
+}
+
+
+H2 {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: 12px; PADDING-BOTTOM: 5px; MARGIN: 0px -10px 5px; TEXT-TRANSFORM: none; COLOR: #2E6E9E; PADDING-TOP: 5px; LETTER-SPACING: 1px; BACKGROUND-COLOR: #E1EFFB;TEXT-TRANSFORM: uppercase
+}
+H1 {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: 12px; PADDING-BOTTOM: 5px; MARGIN: 0px -10px 5px; TEXT-TRANSFORM: none; COLOR: white; PADDING-TOP: 5px; LETTER-SPACING: 1px; BACKGROUND-COLOR: #79AED5
+}
+.box div
+{
+	padding:5px;
+}
+
+/*.banner {
+	width:100%;
+	height:94px;
+	background-image:url(/web/images/logo_bg.jpg)
+}*/
+
+
+.login_user {
+	position: absolute;
+	z-index: 1;
+	font-size:14px;
+	color:#C0C0C0;
+	right:10px;
+	top:10px;
+	border:0px solid red;
+}
+
+.device_status {
+	width:260px;
+	height:475px;
+	/*background: #676C6F;*/
+	background-image: url('../images/lbox_bg.jpg');
+	position: absolute;z-index: 1;
+	font-size:11px;
+	color:#C0C0C0;
+}
+.volume_info {
+	width:245px;
+	height:65px;
+	position: absolute;z-index: 1;
+	background-image: url('../images/v_bg.png');
+	background-repeat: no-repeat;
+}
+.percent_bg {
+	width:170px;
+	height:26px;
+	background-image: url('../images/percent_bg.png');
+	background-repeat: no-repeat;
+	position:absolute;
+	right:10px;
+	top:20px;	
+}
+
+.p_size{
+	height:13px;
+	position:absolute;
+	background-image: url('../images/p_bg.png');
+}
+.size_info{
+	position:absolute;
+	white-space: nowrap;
+}
+.v_name{
+position:absolute;
+}
+
+#title{
+	FONT-SIZE: 18px;
+}
+
+#comment{
+	color:#666666;
+}
+
+.apply_button{
+	width:170px;
+	height:38px;
+	background-image: url('../images/apply.png');
+	background-repeat: no-repeat;
+	font-size:14px;
+	color:#ffffff;
+	line-height: 38px;
+	cursor:pointer;
+	text-align:center;
+}
+.apply_off_button{
+	width:162px;
+	height:32px;
+	background-image: url('../images/apply_off.jpg');
+	background-repeat: no-repeat;
+	font-size:14px;
+	color:#ffffff;
+	line-height: 32px;
+	text-align:center;
+}
+
+.arrow_right {
+	width:11px;
+	height:16px;
+	background-image: url('../images/arrow_right.png');
+	background-repeat: no-repeat;
+	cursor:pointer;
+}
+.arrow_down {
+	width:16px;
+	height:11px;
+	background-image: url('../images/arrow_down.png');
+	background-repeat: no-repeat;
+	cursor:pointer;
+}
+.accordion_title{
+	font-size: 12px;
+	font-weight: bold;
+	cursor:pointer;
+}
+
+#my_scroll{
+outline: none;	/*fish+ :chrome has yellow line issue*/
+}
+
+
+/*scroll bar */
+.osX .jScrollPaneTrack {
+	background: url(/web/jquery/jScrollPane-1.2.3/images/osx_track.png) repeat-y;
+}
+.osX .jScrollPaneDrag {
+	background: url(/web/jquery/jScrollPane-1.2.3/images/osx_drag_middle.png) repeat-y;
+}
+.osX .jScrollPaneDragTop {
+	background: url(/web/jquery/jScrollPane-1.2.3/images/osx_drag_top.png) no-repeat;
+	height: 11px;
+}
+.osX .jScrollPaneDragBottom {
+	background: url(/web/jquery/jScrollPane-1.2.3/images/osx_drag_bottom.png) no-repeat;
+	height: 11px;
+}
+.osX a.jScrollArrowUp {
+	height: 24px;
+	background: url(/web/jquery/jScrollPane-1.2.3/images/osx_arrow_up.png) no-repeat 0 -30px;
+}
+.osX a.jScrollArrowUp:hover {
+	background-position: 0 -30px;
+}
+.osX a.jScrollArrowDown {
+	height: 24px;
+	background: url(/web/jquery/jScrollPane-1.2.3/images/osx_arrow_down.png) no-repeat 0 -30px;
+}
+.osX a.jScrollArrowDown:hover {
+	background-position: 0 -30px;
+}
+
+/* IE SPECIFIC HACKED STYLES */
+* html .osX .jScrollPaneDragBottom {
+	bottom: -1px;
+}
+/* /IE SPECIFIC HACKED STYLES */
+
+#trigger{
+	list-style-type:none;
+	color: #4cd2ff;
+	
+	/*background-color: #CCCCCC;*/
+	background-image: url('../images/management/logout.png');
+	background-repeat: no-repeat;
+	width:87px;
+	height:46px;
+	z-index:2;
+	position: absolute;
+	top:29px;
+	right:13px;
+}
+
+#trigger div{
+	margin:5px 5px 0px 10px;
+	width:90px;
+}
+
+#trigger div a:link {
+	color: #4cd2ff;
+}
+
+#trigger div a:active {
+	color: #4cd2ff;
+}
+
+#trigger div a:visited {
+	color: #4cd2ff;
+}
+
+#trigger div a:hover {
+	/*text-decoration:underline;*/
+	color: #ffffff;
+}
+
+#lan{
+	list-style-type:none;
+	/*color: #000000;*/
+	
+	background-color: #ffffff;
+	/*background-image: url('/web/images/management/logout.png');*/
+	background-repeat: no-repeat;
+	width:177px;
+	height:236px;
+	
+	position: absolute;
+	top:29px;
+	right:13px;
+	z-index:10000;
+}
+
+#lan div{
+	margin:5px 5px 0px 10px;
+	width:180px;
+}
+
+#s_logo{
+	position:absolute;
+	right:15px;
+}
+
+#down_icon{
+	position:absolute;
+	right:5px;
+	z-index: 1;
+	color:#C0C0C0;
+	cursor: pointer;
+}
+
+.padding_td{
+	padding-left:16px
+}
+
+.list_tr_even{
+
+}
+.list_tr_odd{
+	background: #d9d9d9;
+}
+
+.menu_on {
+	width:180px;
+	height:48px;
+	background-image: url('../images/button-on.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	z-index: 1;
+	text-align:center;
+	padding-top:2px;
+	font-size:18px;
+	color:#000000;
+	cursor:pointer;
+	margin-top:-6px;
+}
+
+.menu_on span{
+	width:180px;
+	height:30px;
+	position: absolute;
+	text-align:center;
+	font-size:18px;
+	left:1px;
+	margin-top:12px;
+	z-index: 99;
+	color:#000000;
+	border:#00FF00 0px solid;
+}
+
+.menu_off {
+	width:170px;
+	height:38px;
+	background-image: url('../images/button.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	z-index: 1;
+	text-align:center;
+	padding-top:7px;
+	font-size:18px;
+	color:#C0C0C0;
+	cursor:pointer;
+}
+
+.menu_hover {
+	width:170px;
+	height:50px;/*,38px;*/
+	/* background-image: url('/web/images/button_over.png'); */
+	background-image: url('../images/button/button_arrow.gif');
+	background-repeat: no-repeat;
+	position: absolute;z-index: 1;
+	text-align:center;
+	padding-top:7px;
+	font-size:18px;
+	color:#ffffff;
+	cursor:pointer;
+	/*border:#ffffff 1px solid;*/
+}
+
+#help_icon {
+	position: absolute;
+	right:15px;
+	top:50px;
+	cursor:pointer;
+	color:#ffffff;
+}
+#refresh_status_icon {
+	position: absolute;
+	right:38px;
+	top:50px;
+	cursor:pointer;
+}
+.sidenavoff {
+	FONT-SIZE: 14px;
+	COLOR: #ffffff;
+	background-image: url('../images/management/sel_bg.png');
+	margin-left:1px;
+	WIDTH:198px
+}
+
+/*
+.menu_off:hover {
+	background-image: url('/web/images/button_over.png');
+}
+*/
+
+.raid_menu
+{
+	width:520px;
+	height:230px;
+	left:5px;
+	top:1px;
+	overflow:auto;
+}
+
+.raid_menu ul{
+	height: auto;
+	width:510px;
+	margin-left:5px;
+	margin-top:5px;
+	overflow: hidden;  
+	padding: 0px;
+}
+
+.raid_menu li
+{ 
+    float: left; 
+	LIST-STYLE-TYPE: none;
+	width:227px;
+	height:90px;
+	padding: 5px;
+	cursor:pointer;
+	margin:1px; 	
+	float: left;			
+	background: url(../images/bg_unselected.png) no-repeat ;
+}
+
+.raid_menu li img
+{
+	position:relative;
+	width:225px;
+	z-index:-1;
+}
+
+.raid_menu li div
+{	
+	margin-top:1px;
+	margin-left:5px;
+	width:210px;
+	text-align:justify; 
+	text-justify: inter-ideograph;
+}  
+.str_nowrap
+{
+	white-space: nowrap;
+}  
+
+.warning
+{
+	color:red;
+}
+
+/* overlay */
+.shareDiag_iso {
+    margin: 0.5in 0;
+    color: #000;
+    padding: 20px;
+    text-align: left;
+    background-image: url('../images/pop_bg.png');
+    /*border: 1px solid #000;*/
+    background-repeat: repeat-x;
+    width:500px;
+/*    height:350px;*/
+		height:400px;
+    
+	border-radius:5px 5px 5px 5px;
+	-webkit-border-top-left-radius:5px;
+	-webkit-border-top-right-radius:5px;
+	-moz-border-radius:5px 5px 5px 5px;
+}
+
+
+/* the overlayed element */ 
+.shareDiag_iso {
+	/* must be initially hidden */
+	display:none;
+	
+	/* place overlay on top of other elements */
+	z-index:10000;
+	
+	/* CSS3 styling for latest browsers */
+	-moz-box-shadow:0 0 10px 10px #2A2A2A;
+	-webkit-box-shadow: 0 0 10px #2A2A2A;
+
+}
+
+/* close button positioned on upper right corner */
+.shareDiag_iso .close {
+	background-image:url(../images/close.png);
+	position:absolute;
+	right:5px;
+	top:10px;
+	cursor:pointer;
+	height:32px;
+	width:35px;
+	z-index:20000;
+	background-repeat: no-repeat;
+}
+
+.shareDiag_iso .close:hover {
+	background-image:url(../images/close_o.png);
+	position:absolute;
+	right:5px;
+	top:10px;
+	cursor:pointer;
+	height:32px;
+	width:35px;
+	z-index:20000;
+	background-repeat: no-repeat;
+}
+.td_selected { 
+background-image:url(../images/status_ok.png); 
+background-repeat:no-repeat; 
+background-position:left; 
+}

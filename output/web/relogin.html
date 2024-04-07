@@ -1,0 +1,388 @@
+HTTP/1.1 200 OK
+Content-Language: en
+P3P: CP='CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR'
+Content-Type: text/html
+Accept-Ranges: bytes
+ETag: "2970898783"
+Last-Modified: Fri, 23 Mar 2018 08:35:56 GMT
+Content-Length: 10766
+Date: Sun, 07 Apr 2024 21:33:48 GMT
+Server: lighttpd/1.4.28
+
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">    
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<link rel="stylesheet" type="text/css" href="/web/css/style.css?v20">
+<script language="javascript" src="/web/jquery/js/jquery_1.6.1.js"></script>
+<script type="text/javascript" src="/web/jquery/jquery.cookie/jquery.cookie.js"></script>
+<script type="text/javascript" src="/web/jquery/jquery.cookie/jquery.cookie.pack.js"></script>
+<script type="text/javascript" src="/web/function/rc4.js"></script>
+<script type="text/javascript" src="/web/function/base64.js"></script>
+<link rel="STYLESHEET" type="text/css" href="/web/css/button_style.css">
+<style>
+
+body, html {margin:0; padding:0; border:0;
+background-repeat: repeat-x;
+} /* Re-sets IE to "zero" for these values */
+
+.login {
+	background-image:url(/web/images/login.png);
+	width:383px;
+	height:325px;
+	background-repeat:no-repeat;
+	padding-top:100px;
+}
+.submit_but{
+	position: relative;
+	text-align:center;
+	padding-top:1px;
+	top:30px;
+	left:110px;
+}
+
+#id_warn{
+	color:#FF0000;
+}
+</style>
+<script>
+
+
+$(function(){
+	
+	get_ssl_info();
+	
+	var location = ($(window).height()-20) + "px";
+	$("#s_logo").css('top',location);
+
+	var oBrowser = new detectBrowser();
+ 	if (!oBrowser.isIE)
+ 	{
+ 		$("#submit_but").css('top',"40px");
+ 	}
+ 		
+	// init checkbox
+	if ($.cookie("rembMe") == "checked")
+	{
+		var c_name = $.cookie('uname');
+		var c_pw = $.cookie('password');
+		if(c_name!=null && c_pw!=null && c_name.length > 0 && c_pw.length >0)
+		{	
+			var p = decRC4(c_name, c_pw);
+			$("#pwd").val(p);
+			$("#pre_pwd").val(p);
+
+			if(c_name=='admin')
+			{
+				sel_item(1)
+			}
+			else
+			{
+				$("#f_username").val(c_name);
+				$("#username").val(c_name);
+				sel_item(2)
+			}
+		}
+
+	  $("#rembMe").attr("checked", true);
+	}
+	else
+		$("#rembMe").attr("checked", false);
+
+	$("#submit_but").click(function(){
+		
+		var name=$("#f_username").val();		
+		var re=/root|anonymous|nobody|administrator|ftp|guest|squeezecenter|sshd|messagebus|netdev/i;
+		var y=name.split(re);
+		if(y.length==0 || y==",")	//for ie,firefox
+		{
+			document.location.href="/web/relogin.html";
+		}
+		else
+		{
+		var u = $('input[name=f_type]:checked').val();
+		if(u==1)
+			$("#username").val("admin");
+		else
+		{
+			$("#username").val(name)
+		}
+		
+		// set password
+		var cUName = $.cookie('uname');
+		var cPwd = $.cookie('password');
+		
+		var pre_pwd = $("#pre_pwd").val();
+		//alert(pre_pwd.substr(0, cPwd.length)+","+ cPwd);
+		if (cPwd != null && pre_pwd.substr(0, cPwd.length) == cPwd && cPwd.length > 0 && pre_pwd.length > 0) {
+			  $("#pwd").val(decRC4(cUName, cPwd));
+			  //alert("p1");
+		}
+		else
+		{
+			  $("#pwd").val($("#pre_pwd").val());
+			  //alert("p2");
+		}
+
+		// cookie
+			if ($("#rembMe").prop("checked"))
+		{
+			var uName = $("#username").val();
+			var pwd = $("#pwd").val();
+	
+			// Save checkbox, userName, password by cookie
+		  	$.cookie("rembMe", "checked", { expires: 365,path: '/' });
+			$.cookie('uname', uName, { expires: 365,path: '/' });
+			$.cookie('password', encRC4(uName, pwd), { expires: 365,path: '/' });
+		}
+		else
+		{
+			// delete cookie
+			$.cookie("rembMe", null);
+			$.cookie("uname", null);
+			$.cookie("password", null);
+		}
+		
+			if ($("#ssl").prop("checked"))
+		{
+			var port = $("#ssl_port").val()
+			if(port=="")
+			{
+				alert(_T('_mail','msg7'));	
+				document.form.ssl_port.select();
+				document.form.ssl_port.focus();
+				return 0;
+			}
+			
+			if (port.indexOf(" ") != -1) 
+		 	{
+		 		alert(_T('_mail','msg8'));
+				document.form.ssl_port.select();
+				document.form.ssl_port.focus();
+		 		return 0;
+		 	}
+		 	
+		 	if (isNaN(port) || port<=0)
+		 	{
+				alert(_T('_mail','msg9'));	
+		 		document.form.ssl_port.select();
+				document.form.ssl_port.focus();
+				return 0;
+		 	}
+			$("#port").val($("#ssl_port").val())
+		}
+		else
+			$("#port").val(document.location.port)
+			
+		document.form.pwd.value = Base64.encode( $("#pwd").val() );
+		document.form.pre_pwd.value = Base64.encode( $("#pre_pwd").val() );
+		document.form.submit();
+		}
+	});
+
+	$("#f_username").click(function(){
+		$('input[name=f_type]').get(1).checked = true;
+	});
+	
+	$("#pre_pwd").click(function(){
+		var cPwd = $.cookie('password');
+		if (cPwd != '' && cPwd != null) {
+			$("#pre_pwd").val(decRC4($.cookie('uname'), $.cookie('password')));
+			cPwd_tmp = cPwd;
+			for (i=0;i<16-cPwd.length;i++)
+			  cPwd_tmp = cPwd_tmp + "*";
+			
+			//alert(cPwd.length);
+			//alert(cPwd_tmp);
+			$("#pre_pwd").val(cPwd_tmp);
+    	}
+	});
+	
+	//sel_item(1);
+});	
+
+function sel_item(item)
+{
+	if(item==1)
+	{
+		$("#f_username").val("");
+		document.form.pre_pwd.focus();
+		document.form.f_type[0].checked=true
+	}
+	else
+	{
+		document.form.f_username.focus();
+		document.form.f_type[1].checked=true
+	}
+}
+
+function Config(e)
+{
+	if (e.keyCode=='13')
+		$("#submit_but").click();
+}
+function detectBrowser()
+{ 
+  var sAgent = navigator.userAgent.toLowerCase();
+  this.isIE = (sAgent.indexOf("msie")!=-1); //IE6.0-7
+  this.isFF = (sAgent.indexOf("firefox")!=-1);//firefox
+  this.isSa = (sAgent.indexOf("safari")!=-1);//safari
+  this.isOp = (sAgent.indexOf("opera")!=-1);//opera
+  this.isNN = (sAgent.indexOf("netscape")!=-1);//netscape
+  this.isMa = this.isIE;//marthon
+  this.isOther = (!this.isIE && !this.isFF && !this.isSa && !this.isOp && !this.isNN && !this.isSa);//unknown Browser
+}
+function show_port()
+{
+	if ($("#ssl").prop("checked"))
+	{
+		$("#port_span").show()
+	}
+	else
+	{
+		$("#port_span").hide()
+	}
+}
+function get_ssl_info()
+{
+	$.ajax({
+		type: "POST",
+		async: false,
+		cache: false,
+		url: "/cgi-bin/login_mgr.cgi",
+		data:"cmd=cgi_get_ssl_info",	
+		dataType: "xml",
+		success: function(xml){
+			var enable = $(xml).find('ssl_info > enable').text();
+			var port = $(xml).find('ssl_info > port').text();
+			
+			if(enable==1)
+				$("#ssl").attr("checked", true);
+			$("#ssl_port").val(port)
+			
+			show_port();
+		}
+		,
+		 error:function(xmlHttpRequest,error){   
+  		 }  
+	});
+}
+</script>
+</head>
+
+<body onKeyPress="Config(event);"  background="/web/images/bg.png" topmargin="0" leftmargin="0" style="overflow:auto" bgcolor="#DDDFE0">
+<img border="0" src="/web/images/logo.png" style="position: absolute;left:15px;top:13px;">
+<form name="form" id="form" method="post" action="/cgi-bin/login_mgr.cgi">
+<input type="hidden" name="cmd" value="login">
+<input type="hidden" name="username" id="username" value="">
+<input type="hidden" name="pwd" id="pwd" value="" >
+<input type="hidden" name="port" id="port" value="" >
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<div align="center">
+<table border="0" width="383" cellspacing="0" cellpadding="0" height="0">
+	<tr>
+		<td>
+<div class="login" id="login">
+			<div align="center">
+			<table width="315" height="169" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<td colspan="3" height="30" align="left" class="str_nowrap">
+	<b>
+						<font style="font-size: 16pt">
+							<span class="_text" lang="_login" datafld="sel">Please Select Your Account</span>:
+						</font>
+						</b>
+						<br><br>
+					</td>
+				</tr>
+			<tr>
+					<td width="15" height="24" align="left">&nbsp;</td>
+					<td width="296" height="24" align="left" colspan="2">
+					<input type="radio" value="1" checked name="f_type" id="f_type1" onclick="sel_item(1)"><label for="f_type1"><font style="font-size: 12pt"><span class="_text" lang="_login" datafld="admin" style="position: relative;"></span></font></label></td>
+			</tr>
+			<tr>
+					<td width="15" height="25" align="left">&nbsp;</td>
+					<td width="92" height="25" align="left">
+					<input type="radio" name="f_type" value="2" id="f_type2" onclick="sel_item(2)"><label for="f_type2"><font style="font-size: 12pt"><span class="_text" lang="_login" datafld="others">Others</span> :</font></label>
+				</td>
+					<td height="25" width="202" align="left">
+					<input type="text" id="f_username" name="f_username"   autocomplete="on" size="30"></td>
+			</tr>
+			<tr>
+					<td width="109" height="25" align="left" colspan="2" style="white-space: nowrap;">
+					<font style="font-size: 16pt"><span class="_text" lang="_login" datafld="pw">Password</span>:</font></td>
+					<td width="202" height="25" align="left">
+					<input type="password" id="pre_pwd" name="pre_pwd" maxlength="16" size="30"></td>
+			</tr>
+			<tr>
+					<td width="15" height="20" align="left">&nbsp;</td>
+					<td width="92" height="20" align="left"></td>
+					<td width="202" height="20" align="left"><input type="checkbox" name="C1" id="rembMe" value="ON"><label for="rembMe"><span class="_text" lang="_login" datafld="remember">Remember Me</span></label></td>
+			</tr>
+			<tr>
+					<td width="15" height="20" align="left">&nbsp;</td>
+					<td width="92" height="20" align="left"></td>
+					<td width="202" height="20" align="left"><input type="checkbox" name="ssl" id="ssl" value="1" onclick="show_port()"><label for="ssl"><span class="_text" lang="_login" datafld="ssl">SSL Login</span></label>&nbsp;&nbsp;&nbsp;<span id="port_span" style="display:none"><span class="_text" lang="_mail" datafld="port">Port</span>:&nbsp;<input type="text" id="ssl_port" name="ssl_port" size="5"></span></td>
+			</tr>
+				</table>
+			       	<div id="id_warn" style="width:357px"></div><br>
+				<div id="submit_but" class="button_medium submit_but">
+				<span class="_text" lang="_login" datafld="login">Login</span></div>
+			</div>
+
+		</div>
+				</td>
+			</tr>
+			</table>
+
+		</div>
+
+<div id="s_logo"><img border="0" src="/web/images/logo2.png"></div>
+</body>
+
+
+</html>
+<script>
+var sys_time = (new Date()).getTime();	
+document.write("<script language=\"javascript\" src=\"/web/function/init.js?id="+sys_time+"\"><\/script>");
+</script>
+<script>
+function parse_form()
+{  //get URL's value
+    
+	var pairs = getAnsString(document.location.href).split("&");
+	var pair;
+	for (pair in pairs)
+	{
+		local = pairs[pair].split("=");
+		Config1[local[0]] = local[1];
+	}
+}
+function Config1(id)
+{	
+	this.id = id;   
+}
+
+function getAnsString(str)
+{  //get value
+   var Strn,NumStart,NumLong;
+   NumStart = str.lastIndexOf("?") + 1;
+   NumLong = str.length;
+   Strn = str.substring(NumStart,NumLong);
+   return Strn ;
+}
+
+parse_form();
+
+var status = Config1.status;
+var msg
+if (status == 5)
+	msg = _T('_login','msg4')
+else 
+	msg = _T('_login','msg3')
+	
+document.getElementById('id_warn').innerHTML = msg;	
+</script>
+

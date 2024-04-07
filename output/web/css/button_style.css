@@ -1,0 +1,237 @@
+HTTP/1.1 200 OK
+Content-Language: en
+P3P: CP='CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR'
+Content-Type: text/css
+Accept-Ranges: bytes
+ETag: "889651"
+Last-Modified: Fri, 11 Aug 2017 08:09:35 GMT
+Content-Length: 4839
+Date: Sun, 07 Apr 2024 20:29:11 GMT
+Server: lighttpd/1.4.28
+
+.button {
+	background-image: url('../images/button/button.png');
+	background-repeat: no-repeat;
+	width:80px;
+	height:25px;
+	text-align:center;
+	line-height: 25px;
+	font-weight: bold;
+	color:#fff;
+	cursor:pointer;
+}
+.button:hover {
+	background-image: url('../images/button/button-h.png');
+}
+.button_display {
+	background-image: url('../images/button/button-display.png');
+	background-repeat: no-repeat;
+	width:80px;
+	height:25px;
+	text-align:center;
+	line-height: 25px;
+	font-weight: bold;
+	color:#fff;
+	cursor:pointer;
+}
+
+.button_min {
+	background-image: url('../images/button/min-button.png');
+	background-repeat: no-repeat;
+	width:101px;
+	height:32px;
+	text-align:center;
+	line-height: 32px;
+	/*font-weight: bold;*/
+	color:#fff;
+	cursor:pointer;
+	font-family: Tahoma;
+	font-size:14px
+}
+
+.button_min:hover {
+	background-image: url('../images/button/min-h-button.png');
+}
+.button_min_display {
+	background-image: url('../images/button/min-button-display.png');
+	background-repeat: no-repeat;
+	width:101px;
+	height:32px;
+	text-align:center;
+	line-height: 32px;
+	font-weight: bold;
+	color:#fff;
+	cursor:pointer;
+}
+
+.button_medium {
+	background-image: url('../images/button/medium-button.png');
+	background-repeat: no-repeat;
+	width:131px;
+	height:25px;
+	text-align:center;
+	line-height: 25px;
+	font-weight: bold;
+	color:#fff;
+	cursor:pointer;
+}
+
+.button_medium:hover {
+	background-image: url('../images/button/medium-h-button.png');
+}
+.button_medium_display {
+	background-image: url('../images/button/middle-button-display.png');
+	background-repeat: no-repeat;
+	width:132px;
+	height:26px;
+	text-align:center;
+	line-height: 26px;
+	font-weight: bold;
+	color:#fff;
+	cursor:pointer;
+}
+
+.button_max {
+	background-image: url('../images/button/max-button.png');
+	background-repeat: no-repeat;
+	width:189px;
+	height:25px;
+	text-align:center;
+	line-height: 25px;
+	font-weight: bold;
+	color:#fff;
+	cursor:pointer;
+}
+
+.button_max:hover {
+	background-image: url('../images/button/max-h-button.png');
+}
+
+.button_max_display {
+	background-image: url('../images/button/max-button-display.png');
+	background-repeat: no-repeat;
+	width:198px;
+	height:25px;
+	text-align:center;
+	line-height: 25px;
+	font-weight: bold;
+	color:#fff;
+	cursor:pointer;
+}
+
+.button_max_generic {
+	background-image: url('../images/button/max-generic-button.png');
+	background-repeat: no-repeat;
+	width:189px;
+	height:25px;
+	text-align:center;
+	line-height: 25px;
+	font-weight: bold;
+	color:#fff;
+	cursor:pointer;
+}
+
+.button_max_generic:hover {
+	background-image: url('../images/button/max-generic-h-button.png');
+}
+
+.button_max_generic_display {
+	background-image: url('../images/button/max-button-display.png');
+	background-repeat: no-repeat;
+	width:198px;
+	height:25px;
+	text-align:center;
+	line-height: 25px;
+	font-weight: bold;
+	color:#fff;
+	cursor:pointer;
+}
+
+
+.button_large {
+	background-image: url('../images/button/large-button.png');
+	background-repeat: no-repeat;
+	width:385px;
+	height:25px;
+	text-align:center;
+	line-height: 25px;
+	font-weight: bold;
+	color:#fff;
+	cursor:pointer;
+}
+
+.button_large:hover {
+	background-image: url('../images/button/large-h-button.png');
+}
+
+.button_large_display {
+	background-image: url('../images/button/large-button-display.png');
+	background-repeat: no-repeat;
+	width:385px;
+	height:25px;
+	text-align:center;
+	line-height: 25px;
+	font-weight: bold;
+	color:#fff;
+	cursor:pointer;
+}
+
+.button_login {
+	background-image: url('../images/button.png');
+	background-repeat: no-repeat;
+	width:170px;
+	height:38px;
+	text-align:center;
+	line-height: 38px;
+	font-weight: bold;
+	color:#fff;
+	cursor:pointer;
+}
+
+.button_login:hover {
+	background-image: url('../images/light_bt.png');
+}
+
+.button_max_wizard {
+	background-image: url('../images/button/max-wizard-button.png');
+	background-repeat: no-repeat;
+	width:189px;
+	height:25px;
+	/*text-align:center;*/
+	line-height: 25px;
+	font-weight: bold;
+	color:#fff;
+	cursor:pointer;
+}
+
+.button_max_wizard:hover {
+	background-image: url('../images/button/max-wizard-h-button.png');
+}
+
+.button_new {
+	background-image: url('/MyMusic/images/popup/buttom_n.png');
+	background-repeat: no-repeat;
+	width:86px;
+	height:35px;
+	text-align:center;
+	line-height: 35px;
+	color:#000;
+	cursor:pointer;
+	font-size:13px;
+}
+.button_new:hover {
+	background-image: url('/MyMusic/images/popup/buttom_f.png');
+	color:#fff;
+}
+
+.button_white {
+	background-image: url('../images/addon/but_white.png');
+	background-repeat: no-repeat;
+	width:121px;
+	height:26px;
+	text-align:center;
+	line-height: 26px;
+	font-weight: bold;
+	/*color:#434343;*/
+	cursor:pointer;
+}

@@ -11,6 +11,6 @@ This template can be used to setup a basic honeypot in ~10min.
 
 Files are downloaded with the `--save-headers` flag set (equivalent to `curl`'s `--include`) to mimic the headers the server we're masquarading as would send.
 
-sources:
+**Sources**:
 - https://www.bleepingcomputer.com/news/security/over-92-000-exposed-d-link-nas-devices-have-a-backdoor-account/
 - https://github.com/netsecfish/dlink
