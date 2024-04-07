@@ -6,7 +6,7 @@ This template can be used to setup a basic honeypot in ~10min.
 - Find a vulnerable D-Link NAS online (fofa, shodan, onyphe, ...).
 - Clone it with the `wget_clone_website.sh`.
 - Manual tinkering to make the honeypot more realistic (cloning isn't perfect so some files 404).
-- Add rule matching the exploit path to log the request to a file.
+- Add rule matching the exploit path (and exploit handling logic) to `server.py`.
 - Save and run!
 
 Files are downloaded with the `--save-headers` flag set (equivalent to `curl`'s `--include`) to mimic the headers the server we're masquarading as would send.
