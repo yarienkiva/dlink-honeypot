@@ -1,5 +1,6 @@
 import http.server
 import logging
+import time
 import csv
 import os
 import re
@@ -20,6 +21,20 @@ class RawHTTPResponseHandler(http.server.BaseHTTPRequestHandler):
         with open(file, "rb") as f:
             self.wfile.write(f.read())
 
+    def _handle_honey(self):
+        known_commands = {
+            "aWQ=": b"uid=0(root) gid=0(root) groups=0(root)\n",
+            "d2hvYW1p": b"root\n",
+            "bHM=": b"box.cgi\ncodepage_mgr.cgi\ndownload_mgr.cgi\ndropbox.cgi\nfolder_tree.cgi\n",
+        }
+
+        for k, v in known_commands.items():
+            if k in self.path:
+                self.wfile.write(v)
+                break
+
+        self._sendfile(req_honey)
+
     def do_GET(self):
         """
         example: '/cgi-bin/nas_sharing.cgi?user=messagebus&passwd=&cmd=15&system=<BASE64_CMD>'
@@ -31,8 +46,15 @@ class RawHTTPResponseHandler(http.server.BaseHTTPRequestHandler):
             if self.path.startswith("/cgi-bin/nas_sharing.cgi"):
                 with open("auth.log", "a") as f:
                     wr = csv.writer(f, quoting=csv.QUOTE_ALL)
-                    wr.writerow([self.client_address[0], self.path])
-                return self._sendfile(req_honey)
+                    wr.writerow(
+                        [
+                            int(time.time()),
+                            self.client_address[0],
+                            self.headers,
+                            self.path,
+                        ]
+                    )
+                return
 
             elif not _is_path_safe(file_path, req_dir):
                 raise Exception(f"Path traversal detected: {self.path}")
