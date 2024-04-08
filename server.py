@@ -28,12 +28,14 @@ class RawHTTPResponseHandler(http.server.BaseHTTPRequestHandler):
             "bHM=": b"box.cgi\ncodepage_mgr.cgi\ndownload_mgr.cgi\ndropbox.cgi\nfolder_tree.cgi\n",
         }
 
-        for k, v in known_commands.items():
+        for k, command_output in known_commands.items():
             if k in self.path:
-                self.wfile.write(v)
                 break
+        else:
+            command_output = b""
 
-        self._sendfile(req_honey)
+        with open(req_honey, "rb") as f:
+            self.wfile.write(f.read().replace(b"<COMMAND_OUTPUT>\n", command_output))
 
     def do_GET(self):
         """
@@ -54,6 +56,7 @@ class RawHTTPResponseHandler(http.server.BaseHTTPRequestHandler):
                             self.path,
                         ]
                     )
+                self._handle_honey()
                 return
 
             elif not _is_path_safe(file_path, req_dir):
