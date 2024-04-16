@@ -76,6 +76,7 @@ class RawHTTPResponseHandler(http.server.BaseHTTPRequestHandler):
         """
 
         try:
+            file_path = urlparse(self.path).path
             file_path = os.path.join(req_dir, self.path.lstrip("/"))
             logging.info((self.client_address[0], self.path))
 
